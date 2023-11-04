@@ -7,6 +7,7 @@ import cv2
 import numpy as np
 import math
 import flask
+from flask import Flask, render_template, request, redirect, url_for, flash, jsonify
 
 
 app = flask.Flask(__name__)
@@ -105,6 +106,23 @@ def recognize():
 
         return resultApi
     
+##Make web page to upload image
+@app.route('/', methods=['GET'])
+def home():
+    return render_template('index.html')
+
+@app.route('/upload', methods=['POST'])
+def upload():
+    if request.method == 'POST':
+        img = request.files['image']
+        img.save('static/know_faces/'+img.filename)
+        return redirect(url_for('home'))
+
+
+
+
+
+
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000)
     

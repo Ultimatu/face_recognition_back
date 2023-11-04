@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Face Recognition App</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1 class="mt-5">Face Recognition App</h1>
+        <form class="mt-4" action="/upload" method="post" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="image">Upload an image:</label>
+                <input type="file" name="image" class="form-control" id="image" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Upload and Recognize</button>
+        </form>
+    </div>
+</body>
+</html>
